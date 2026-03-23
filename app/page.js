@@ -1,65 +1,91 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
+  const features = [
+    { title: "短いフォームで送れる", desc: "必要な情報だけを入力して、すぐ送信できます。" },
+    { title: "入力チェック付き", desc: "空欄やメール形式など、送信前にルール確認します。" },
+    { title: "スマホでも見やすい", desc: "レスポンシブ設計で、縦長でも読みやすいレイアウト。" },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="mx-auto max-w-5xl px-4 py-10">
+      <section className="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-xl">
+            <div className="inline-flex items-center rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">
+              お問い合わせフォームLP（商品化用テンプレ）
+            </div>
+            <h1 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">
+              必要な連絡を、迷わず送れる。
+              <br />
+              スマホでも見やすい問い合わせページ。
+            </h1>
+            <p className="mt-3 text-zinc-300">
+              このページはフォーム送信連携（例：Formspree）に対応しています。
+              入力→送信→結果が表示されるところまで、体験できます。
+            </p>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link
+                href="/contact"
+                className="inline-flex h-11 items-center justify-center rounded-xl bg-cyan-400 px-5 text-sm font-semibold text-zinc-950 hover:bg-cyan-300"
+              >
+                お問い合わせへ
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex h-11 items-center justify-center rounded-xl border border-white/10 bg-transparent px-5 text-sm font-semibold text-zinc-100 hover:bg-white/5"
+              >
+                まずは送信体験
+              </Link>
+            </div>
+          </div>
+
+          <div className="lg:w-[320px]">
+            <div className="rounded-xl bg-zinc-900/40 p-4 ring-1 ring-white/10">
+              <div className="text-sm font-semibold">よくある質問（例）</div>
+              <div className="mt-3 space-y-2 text-sm text-zinc-300">
+                <div>
+                  ・どれくらいで返信？ <span className="text-zinc-100">目安：24〜48時間</span>
+                </div>
+                <div>
+                  ・送信先はどこ？ <span className="text-zinc-100">Gmailへ届く設定が可能</span>
+                </div>
+                <div>
+                  ・対応範囲は？ <span className="text-zinc-100">ご要望をヒアリング</span>
+                </div>
+              </div>
+              <div className="mt-4 text-xs text-zinc-400">
+                ※文言は納品物として差し替えます。
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="mt-8">
+        <h2 className="text-lg font-semibold">このLPでできること</h2>
+        <div className="mt-4 grid gap-4 sm:grid-cols-3">
+          {features.map((f) => (
+            <div
+              key={f.title}
+              className="rounded-2xl border border-white/10 bg-white/5 p-5"
+            >
+              <div className="text-sm font-semibold">{f.title}</div>
+              <div className="mt-2 text-sm text-zinc-300">{f.desc}</div>
+            </div>
+          ))}
         </div>
-      </main>
+      </section>
+
+      <section className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
+        <h2 className="text-lg font-semibold">次のステップ（納品イメージ）</h2>
+        <ol className="mt-3 list-decimal pl-5 text-sm text-zinc-300">
+          <li>フォームの文言（質問項目）をあなた用に調整</li>
+          <li>送信先（Gmailへ届く設定）をフォーム連携で接続</li>
+          <li>スマホ表示と送信体験を確認して納品</li>
+        </ol>
+      </section>
     </div>
   );
 }
