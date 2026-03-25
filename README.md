@@ -34,8 +34,8 @@ NEXT_PUBLIC_CONTACT_ENDPOINT=https://example.formspree.io/f/xxxx
 - スマホ: `screenshots/contact-mobile.png`
 - 送信成功: `screenshots/contact-submit-success.png`
 
-![お問い合わせ（PC）](screenshots/contact-pc.png)
-![お問い合わせ（スマホ）](screenshots/contact-mobile.png)
+![お問い合わせ（PC）](screenshots/contact-pc.jpg)
+![お問い合わせ（スマホ）](screenshots/contact-mobile.jpg)
 ![送信成功](screenshots/contact-submit-success.png)
 
 ## 開発
