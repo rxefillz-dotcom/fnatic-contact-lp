@@ -30,8 +30,8 @@ NEXT_PUBLIC_CONTACT_ENDPOINT=https://example.formspree.io/f/xxxx
 ## スクリーンショット
 下の3枚を `fnatic-contact-lp/screenshots/` に配置し、次のファイル名で管理してください。
 
-- PC: `screenshots/contact-pc.png`
-- スマホ: `screenshots/contact-mobile.png`
+- PC: `screenshots/contact-pc.jpg`
+- スマホ: `screenshots/contact-mobile.jpg`
 - 送信成功: `screenshots/contact-submit-success.png`
 
 ![お問い合わせ（PC）](screenshots/contact-pc.jpg)
