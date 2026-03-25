@@ -1,38 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# fnatic-contact-lp（問い合わせLP）
 
-## Getting Started
+## 公開URL
+- https://fnatic-contact-lp.vercel.app
 
-First, run the development server:
+## このLPでできること
+- スマホでも見やすい問い合わせフォームLP
+- 入力チェック付き（空欄、メール形式、500文字以内）
+- 送信結果の表示
+  - 成功: `送信しました。ご確認ください。`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 使い方
+1. `/contact` を開く
+2. `お名前` / `メールアドレス` / `お問い合わせ内容` を入力
+3. `送信する` を押す
+4. 送信結果（成功/失敗）が表示されることを確認
+
+## 送信先エンドポイント設定
+フォームの送信先は `NEXT_PUBLIC_CONTACT_ENDPOINT`（フォーム連携エンドポイント）です。
+`fnatic-contact-lp/components/ContactForm.js` で参照しています。
+
+ローカル開発では、プロジェクト直下に `.env.local` を作成して次を設定してください。
+
+```env
+NEXT_PUBLIC_CONTACT_ENDPOINT=https://example.formspree.io/f/xxxx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+設定後は、開発サーバを再起動してください。
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## スクリーンショット
+下の3枚を `fnatic-contact-lp/screenshots/` に配置し、次のファイル名で管理してください。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- PC: `screenshots/contact-pc.png`
+- スマホ: `screenshots/contact-mobile.png`
+- 送信成功: `screenshots/contact-submit-success.png`
 
-## Learn More
+![お問い合わせ（PC）](screenshots/contact-pc.png)
+![お問い合わせ（スマホ）](screenshots/contact-mobile.png)
+![送信成功](screenshots/contact-submit-success.png)
 
-To learn more about Next.js, take a look at the following resources:
+## 開発
+```bash
+npm install
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## デプロイ
+Vercel へはこのまま Import してデプロイ可能です。
 
 - Vercel redeploy test: 2026-03-24
