@@ -1,10 +1,33 @@
 import Link from "next/link";
+import FaqAccordion from "../components/FaqAccordion";
+
+export const metadata = {
+  title: "れいたの問い合わせLP",
+  description: "お問い合わせ内容を送信できます（フォーム送信連携つき）。",
+  openGraph: {
+    title: "れいたの問い合わせLP",
+    description: "お問い合わせ内容を送信できます（フォーム送信連携つき）。",
+    url: "https://fnatic-contact-lp.vercel.app",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "れいたの問い合わせLP",
+    description: "お問い合わせ内容を送信できます（フォーム送信連携つき）。",
+  },
+};
 
 export default function Home() {
   const features = [
     { title: "短いフォームで送れる", desc: "必要な情報だけを入力して、すぐ送信できます。" },
     { title: "入力チェック付き", desc: "空欄やメール形式など、送信前にルール確認します。" },
     { title: "スマホでも見やすい", desc: "レスポンシブ設計で、縦長でも読みやすいレイアウト。" },
+  ];
+
+  const faqItems = [
+    { question: "どれくらいで返信？", answer: "目安：24〜48時間" },
+    { question: "送信先はどこ？", answer: "Gmailへ届く設定が可能" },
+    { question: "対応範囲は？", answer: "ご要望をヒアリング" },
   ];
 
   return (
@@ -44,17 +67,7 @@ export default function Home() {
           <div className="lg:w-[320px]">
             <div className="rounded-xl bg-zinc-900/40 p-4 ring-1 ring-white/10">
               <div className="text-sm font-semibold">よくある質問（例）</div>
-              <div className="mt-3 space-y-2 text-sm text-zinc-300">
-                <div>
-                  ・どれくらいで返信？ <span className="text-zinc-100">目安：24〜48時間</span>
-                </div>
-                <div>
-                  ・送信先はどこ？ <span className="text-zinc-100">Gmailへ届く設定が可能</span>
-                </div>
-                <div>
-                  ・対応範囲は？ <span className="text-zinc-100">ご要望をヒアリング</span>
-                </div>
-              </div>
+              <FaqAccordion items={faqItems} defaultOpenIndex={0} />
               <div className="mt-4 text-xs text-zinc-400">
                 ※文言は納品物として差し替えます。
               </div>
