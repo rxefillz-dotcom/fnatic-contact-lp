@@ -49,8 +49,8 @@ export default function Home() {
             </div>
             <h1 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">
               必要な連絡を、迷わず送れる。
-              <br />
-              スマホでも見やすい問い合わせページ。
+              <span className="block">スマホでも見やすい</span>
+              <span className="block">問い合わせページ。</span>
             </h1>
             <p className="mt-3 text-zinc-300">
               このページはフォーム送信連携（例：Formspree）に対応しています。
