@@ -1,6 +1,18 @@
 import Link from "next/link";
 import FaqAccordion from "../components/FaqAccordion";
 
+const FEATURES = [
+  { title: "短いフォームで送れる", desc: "必要な情報だけを入力して、すぐ送信できます。" },
+  { title: "入力チェック付き", desc: "空欄やメール形式など、送信前にルール確認します。" },
+  { title: "スマホでも見やすい", desc: "レスポンシブ設計で、縦長でも読みやすいレイアウト。" },
+];
+
+const FAQ_ITEMS = [
+  { question: "どれくらいで返信？", answer: "目安：24〜48時間" },
+  { question: "送信先はどこ？", answer: "Gmailへ届く設定が可能" },
+  { question: "対応範囲は？", answer: "ご要望をヒアリング" },
+];
+
 export const metadata = {
   title: "れいたの問い合わせLP",
   description: "お問い合わせ内容を送信できます（フォーム送信連携つき）。",
@@ -27,18 +39,6 @@ export const metadata = {
 };
 
 export default function Home() {
-  const features = [
-    { title: "短いフォームで送れる", desc: "必要な情報だけを入力して、すぐ送信できます。" },
-    { title: "入力チェック付き", desc: "空欄やメール形式など、送信前にルール確認します。" },
-    { title: "スマホでも見やすい", desc: "レスポンシブ設計で、縦長でも読みやすいレイアウト。" },
-  ];
-
-  const faqItems = [
-    { question: "どれくらいで返信？", answer: "目安：24〜48時間" },
-    { question: "送信先はどこ？", answer: "Gmailへ届く設定が可能" },
-    { question: "対応範囲は？", answer: "ご要望をヒアリング" },
-  ];
-
   return (
     <div className="mx-auto max-w-5xl px-4 py-10">
       <section className="rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
@@ -76,7 +76,7 @@ export default function Home() {
           <div className="lg:w-[320px]">
             <div className="rounded-xl bg-zinc-900/40 p-4 ring-1 ring-white/10">
               <div className="text-sm font-semibold">よくある質問（例）</div>
-              <FaqAccordion items={faqItems} defaultOpenIndex={0} />
+              <FaqAccordion items={FAQ_ITEMS} defaultOpenIndex={0} />
               <div className="mt-4 text-xs text-zinc-400">
                 ※文言は納品物として差し替えます。
               </div>
@@ -88,7 +88,7 @@ export default function Home() {
       <section className="mt-8">
         <h2 className="text-lg font-semibold">このLPでできること</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-3">
-          {features.map((f) => (
+          {FEATURES.map((f) => (
             <div
               key={f.title}
               className="rounded-2xl border border-white/10 bg-white/5 p-5"
