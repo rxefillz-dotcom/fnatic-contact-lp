@@ -12,7 +12,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://fnatic-contact-lp.vercel.app";
+
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "れいたの問い合わせLP",
   description: "お問い合わせ内容を送信できます（フォーム送信連携つき）。",
 };

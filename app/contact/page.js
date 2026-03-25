@@ -3,6 +3,26 @@ import ContactForm from "../../components/ContactForm";
 export const metadata = {
   title: "お問い合わせ｜れいたのサービス",
   description: "フォームでお問い合わせを送信できます。",
+  openGraph: {
+    title: "お問い合わせ｜れいたのサービス",
+    description: "フォームでお問い合わせを送信できます。",
+    url: "https://fnatic-contact-lp.vercel.app/contact",
+    type: "website",
+    images: [
+      {
+        url: "/ogp-landscape.png",
+        width: 993,
+        height: 691,
+        alt: "お問い合わせページ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "お問い合わせ｜れいたのサービス",
+    description: "フォームでお問い合わせを送信できます。",
+    images: ["/ogp-landscape.png"],
+  },
 };
 
 export default function ContactPage() {

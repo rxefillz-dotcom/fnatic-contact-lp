@@ -9,11 +9,20 @@ export const metadata = {
     description: "お問い合わせ内容を送信できます（フォーム送信連携つき）。",
     url: "https://fnatic-contact-lp.vercel.app",
     type: "website",
+    images: [
+      {
+        url: "/ogp-landscape.png",
+        width: 993,
+        height: 691,
+        alt: "お問い合わせフォームLP",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "れいたの問い合わせLP",
     description: "お問い合わせ内容を送信できます（フォーム送信連携つき）。",
+    images: ["/ogp-landscape.png"],
   },
 };
 
